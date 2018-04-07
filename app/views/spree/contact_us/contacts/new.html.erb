@@ -4,13 +4,13 @@
 
 <% content_for :sidebar do
    if "products" == @current_controller && @taxon %>
-    <%= render :partial => "spree/shared/filters" %>
+    <%= render partial: "spree/shared/filters" %>
   <% elsif !(@taxonomies.nil?)%>
-    <%= render :partial => "spree/shared/taxonomies" %>
+    <%= render partial: "spree/shared/taxonomies" %>
   <% end
  end %>
 
-<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
+<%= render partial: 'spree/shared/error_messages', locals: { target: @contact } %>
 
 <h1><%= Spree.t(:contact_us_title) %></h1>
 <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
