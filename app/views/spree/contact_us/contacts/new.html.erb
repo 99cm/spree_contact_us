@@ -1,5 +1,5 @@
 <% content_for :head do -%>
-  <meta name="title" content="<%= Spree.t(:contact_us_title) %>">
+  <meta name="title" content="<%= t('spree.contact_us_title') %>">
 <% end -%>
 
 <% content_for :sidebar do
@@ -12,8 +12,8 @@
 
 <%= render partial: 'spree/shared/error_messages', locals: { target: @contact } %>
 
-<h1><%= Spree.t(:contact_us_title) %></h1>
-<%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
+<h1><%= t('spree.contact_us_title') %></h1>
+<%= form_for @contact, url: contacts_path, html: { novalidate: '' } do |f| %>
   <% if SpreeContactUs.require_name %>
     <p>
       <%= f.label :name %>
@@ -39,6 +39,6 @@
     <%= f.text_area :message, class: 'required form-control' %>
   </p>
   <p>
-    <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit) %>
+    <%= f.submit t('spree.submit'), alt: t('spree.submit'), id: 'contact_us_contact_submit', title: t('spree.submit') %>
   </p>
 <% end %>
