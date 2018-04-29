@@ -19,8 +19,8 @@ module Spree
 
       validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
       validates :message, presence: true, length: { in: 4..1000, too_long: "%{count} characters is the maximum allowed" }
-      # validates :name,    :presence => {:if => Proc.new{SpreeContactUs.require_name}}
-      # validates :subject, :presence => {:if => Proc.new{SpreeContactUs.require_subject}}
+      validates :name, presence: {if: Proc { SpreeContactUs.require_name? }}
+      validates :subject, presence: {if: Proc { SpreeContactUs.require_subject? }}
 
       def initialize(attributes = {})
         [:email, :message, :name, :subject].each do |attribute|
