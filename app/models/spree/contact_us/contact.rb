@@ -7,21 +7,20 @@ module Spree
 
       attr_accessor :email, :message, :name, :subject
 
-      EMAIL_REGEX = /\A
-        [^\s@]+ # non-at-sign characters, at least one
-          @     # at-sign
-        [^\s.@] # non-at-sign and non-period character
-        [^\s@]* # 0 or more non-at-sign characters, accepts any number of periods
-         \.     # period
-        [^\s@]* # 0 or more non-at-sign characters, accepts any number of periods
-        [^\s.@] # non-at-sign and non-period character
-      \z/x
+      #EMAIL_REGEX = /\A
+       # [^\s@]+ # non-at-sign characters, at least one
+       #   @     # at-sign
+       #[^\s.@] # non-at-sign and non-period character
+       # [^\s@]* # 0 or more non-at-sign characters, accepts any number of periods
+       #  \.     # period
+       # [^\s@]* # 0 or more non-at-sign characters, accepts any number of periods
+       # [^\s.@] # non-at-sign and non-period character
+      #\z/x
 
-      validates :email,   :format => { :with => EMAIL_REGEX },
-                          :presence => true
-      validates :message, :presence => true
-      validates :name,    :presence => {:if => Proc.new{SpreeContactUs.require_name}}
-      validates :subject, :presence => {:if => Proc.new{SpreeContactUs.require_subject}}
+      validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+      validates :message, presence: true, length: { in: 4..1000, too_long: "%{count} characters is the maximum allowed" }
+      # validates :name,    :presence => {:if => Proc.new{SpreeContactUs.require_name}}
+      # validates :subject, :presence => {:if => Proc.new{SpreeContactUs.require_subject}}
 
       def initialize(attributes = {})
         [:email, :message, :name, :subject].each do |attribute|
