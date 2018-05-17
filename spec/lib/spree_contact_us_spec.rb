@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe SpreeContactUs do
+RSpec.describe SpreeContactUs do
 
   after do
     # Reset to defaults.
