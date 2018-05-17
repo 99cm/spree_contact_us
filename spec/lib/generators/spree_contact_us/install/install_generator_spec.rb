@@ -1,8 +1,7 @@
-require 'spec_helper'
-require 'generator_spec/test_case'
+require 'rails_helper'
 require 'generators/spree_contact_us/install/install_generator'
 
-describe SpreeContactUs::Generators::InstallGenerator do
+RSpec.describe SpreeContactUs::Generators::InstallGenerator do
 
   include GeneratorSpec::TestCase
   destination File.expand_path("../../../../../dummy", __FILE__)
