@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Spree::ContactUs::Contact do
+Rspec.describe Spree::ContactUs::Contact do
 
   it_should_behave_like 'ActiveModel'
 
