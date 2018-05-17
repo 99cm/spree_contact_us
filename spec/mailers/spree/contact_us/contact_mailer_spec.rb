@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Spree::ContactUs::ContactMailer do
+RSpec.describe Spree::ContactUs::ContactMailer do
 
   describe "#contact_email" do
 
