@@ -1,6 +1,6 @@
-require "spec_helper".freeze
+require "rails_helper".freeze
 
-describe Spree::ContactUs::ContactsController, type: :controller do
+RSpec.describe Spree::ContactUs::ContactsController, type: :controller do
   before(:each) do
     SpreeContactUs.mailer_to = "test@example.com"
     @contact_attributes = { email: "Valid@Email.com", message: "Test" }
