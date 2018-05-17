@@ -1,6 +1,6 @@
-require "spec_helper".freeze
+require "rails_helper".freeze
 
-describe "Contact Us page", type: :feature, js: true do
+RSpec.describe "Contact Us page", type: :feature, js: true do
   after do
     ActionMailer::Base.deliveries = []
     SpreeContactUs.mailer_from = nil
