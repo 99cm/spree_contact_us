@@ -1,3 +1,4 @@
+require 'sass/rails'
 require 'spree_core'
 require 'spree_contact_us/engine'
 
@@ -8,6 +9,9 @@ module SpreeContactUs
 
   # Address to send ContactUs email notifications to.
   mattr_accessor :mailer_to
+
+  # Addresses ContactUs email notifications are sent to.
+  mattr_accessor :mailer_bcc
 
   # Enable or Disable name field.
   mattr_accessor :require_name
