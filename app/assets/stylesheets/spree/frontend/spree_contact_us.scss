@@ -15,31 +15,28 @@
   overflow: hidden;
 }
 
-#comments,
+#message,
 #name_email,
-#condition,
 #contact_us_contact_submit{
   margin-bottom: 10px !important;
 }
 
-div#name.input-group,
-div#email.input-group{
+label#name.input-group,
+label#email.input-group,
+label#subject.input-group{
   width: 33%;
   display: inline-table;
 }
 
-div#comments,
+label#message,
 input#contact_us_contact_submit{
   margin-top: 10px;
 }
 
-label#label_contact_term_and_cond{
-  margin-left: 20px;
-}
-
 @media (max-width: 815px ) {
-  div#name.input-group,
-  div#email.input-group{
+  label#name.input-group,
+  label#email.input-group,
+  label#subject.input-group{
     width: 100%;
     margin-bottom: 5px;
   }
