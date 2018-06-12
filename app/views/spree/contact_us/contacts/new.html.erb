@@ -3,10 +3,10 @@
 <% end -%>
 
 <% content_for :sidebar do
-   if "products" == @current_controller && @taxon %>
-    <%= render partial: "spree/shared/filters" %>
+   if 'products' == @current_controller && @taxon %>
+    <%= render partial: 'spree/shared/filters' %>
   <% elsif !(@taxonomies.nil?)%>
-    <%= render partial: "spree/shared/taxonomies" %>
+    <%= render partial: 'spree/shared/taxonomies' %>
   <% end
  end %>
 
